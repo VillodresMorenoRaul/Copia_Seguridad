@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/Titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:text="¿ES PRIMO ESTE NÚMERO?"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        />
+
+    <TextView
+        android:id="@+id/Descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Titulo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:text='Esta aplicación te dirá si un número es primo o no, simplemente debes pulsar "___" , escribir el número y dar click en el botón. '
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/numeroSeleccionado"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Descripcion"
+        android:layout_toEndOf="@+id/texto"
+        android:ems="30"
+        android:gravity="center"
+        android:inputType="number"
+        />
+
+    <TextView
+        android:id="@+id/texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/numeroSeleccionado"
+        android:layout_alignBottom="@+id/numeroSeleccionado"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:gravity="center|right"
+        android:text="El número seleccionado es:   "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:id="@+id/Comprobar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/numeroSeleccionado"
+        android:layout_alignEnd="@+id/numeroSeleccionado"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="140dp"
+        android:background="#FF0000"
+        android:text="Comprobar"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/esPrimoONo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Comprobar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="0dp"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="17dp"
+        />
+
+</RelativeLayout>
