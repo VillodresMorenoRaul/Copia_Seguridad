@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Ejercicio2_Villodres_Raul_Aplicaciones</string>
+    <string name="cafes">Cafés</string>
+    <string name="cero">0</string>
+    <string name="menos">-</string>
+    <string name="cinco">5</string>
+    <string name="mas">+</string>
+    <string name="comenzar">Comenzar</string>
+</resources>
