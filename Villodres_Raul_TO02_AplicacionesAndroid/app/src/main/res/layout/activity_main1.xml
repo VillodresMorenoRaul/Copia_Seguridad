@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity1">
+
+    <EditText
+        android:id="@+id/Moneda1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/Moneda2"
+        app:layout_constraintEnd_toStartOf="@+id/sinopsisDelLibro"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="220dp"
+        android:text="EJERCICIO1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sinopsisDelLibro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="142dp"
+        android:text="Moneda nº1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toEndOf="@+id/Moneda1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/autorDelLibro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="37dp"
+        android:text="Moneda nº2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Moneda2"
+        app:layout_constraintTop_toBottomOf="@+id/sinopsisDelLibro" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="144dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/Convertir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Moneda2">
+
+        <RadioButton
+            android:id="@+id/DolaresAEuros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dólares a Euros" />
+
+        <RadioButton
+            android:id="@+id/EurosADolares"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Euros a Dólares" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/Moneda2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="92dp"
+        android:ems="10"
+        android:inputType="none"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Moneda1" />
+
+    <Button
+        android:id="@+id/Convertir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="68dp"
+        android:text="Convertir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

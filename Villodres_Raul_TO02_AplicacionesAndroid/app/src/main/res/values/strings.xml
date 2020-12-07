@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Villodres_Raul_TO02_AplicacionesAndroid</string>
+
+    <string name="Don_Quijote_Nombre">El ingenioso Hidalgo Don Quijote</string>
+    <string name="Don_Quijote_Autor">Miguel de Cervantes Savaedra</string>
+    <string name="Don_Quijote_Editorial">S.L.U. ESPASA</string>
+    <string name="Don_Quijote_FechaPublicacion">x/x/1615</string>
+    <string name="Don_Quijote_Sinopsis">Las desventuras de un peculiar caballero</string>
+
+    <string name="Fuentes_Del_Silencio_Nombre">Las fuentes del silencio</string>
+    <string name="Fuentes_Del_Silencio_Autor">Ruta Sepetys</string>
+    <string name="Fuentes_Del_Silencio_Editorial">MAEVA</string>
+    <string name="Fuentes_Del_Silencio_FechaPublicacion">28/07/2020</string>
+    <string name="Fuentes_Del_Silencio_Sinopsis">Desenterrar el pasado es doloroso</string>
+
+    <string name="Harry_Potter_Nombre">Harry Potter y la piedra filosofal</string>
+    <string name="Harry_Potter_Autor">J.K Rowling</string>
+    <string name="Harry_Potter_Editorial">S.A Salamandra</string>
+    <string name="Harry_Potter_FechaPublicacion">27/08/2000</string>
+    <string name="Harry_Potter_Sinopsis">Un joven entra en Hogwarts para iniciarse como mago</string>
+
+    <string name="Uzumaki_Nombre">Uzumaki</string>
+    <string name="Uzumaki_Autor">Junji Ito</string>
+    <string name="Uzumaki_Editorial">Planeta de Agostini</string>
+    <string name="Uzumaki_FechaPublicacion">29/08/1998</string>
+    <string name="Uzumaki_Sinopsis">Aterradora historia donde las espirales son la clave</string>
+
+    <string name="Coraline_Nombre">Coraline</string>
+    <string name="Coraline_Autor">Neil Gaiman</string>
+    <string name="Coraline_Editorial">S.A Salamandra</string>
+    <string name="Coraline_FechaPublicacion">24/07/2002</string>
+    <string name="Coraline_Sinopsis">Un mundo de fantasía oscura donde aprendes a valorar lo que tienes</string>
+
+    <string name="Color_Del_Espacio_Nombre">El color que cayó del espacio</string>
+    <string name="Color_Del_Espacio_Autor">H.P lovecraft</string>
+    <string name="Color_Del_Espacio_Editorial">Nordica</string>
+    <string name="Color_Del_Espacio_FechaPublicacion">x/09/1927</string>
+    <string name="Color_Del_Espacio_Sinopsis">En ocasiones, la entidad más temible no es cómo uno se imagina</string>
+
+</resources>
