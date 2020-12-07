@@ -23,16 +23,16 @@ public class MainActivity3 extends AppCompatActivity implements FragmentLista.Fr
     }
 
     @Override
-    public void onNoteView(LibroEjercicio3 note) {
+    public void onNoteView(LibroEjercicio3 libro) {
 
         FragmentManager fm=getSupportFragmentManager();
         fragmentDetalle = (FragmentDetalle) fm.findFragmentByTag(FragmentDetalle.TAG);
 
         if (fragmentDetalle == null) {
             Bundle bundle= null;
-            if (note!=null){
+            if (libro!=null){
                 bundle= new Bundle();
-                bundle.putParcelable(LibroEjercicio3.TAG,note);
+                bundle.putParcelable(LibroEjercicio3.TAG,libro);
             }
             fragmentDetalle = (FragmentDetalle) fragmentDetalle.newInstance(bundle);
         }

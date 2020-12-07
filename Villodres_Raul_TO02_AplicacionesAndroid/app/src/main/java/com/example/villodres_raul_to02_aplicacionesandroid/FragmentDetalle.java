@@ -52,13 +52,13 @@ public class FragmentDetalle extends Fragment {
         ImagenDelLibro = view.findViewById(R.id.imagenDelLibro);
 
         if (getArguments() != null) {
-            LibroEjercicio3 note = getArguments().getParcelable(LibroEjercicio3.TAG);
-            NombreDelLibro.setText(note.getNombreLibro());
-            AutorDelLibro.setText(note.getAutorLibro());
-            EditorialDelLibro.setText(note.getEditorialLibro());
-            PublicacionDelLibro.setText(note.getFechaPublicacionLibro());
-            SinopsisDelLibro.setText(note.getSinopsisLibro());
-            ImagenDelLibro.setImageResource(note.getImagen());
+            LibroEjercicio3 libro = getArguments().getParcelable(LibroEjercicio3.TAG);
+            NombreDelLibro.setText(libro.getNombreLibro());
+            AutorDelLibro.setText(libro.getAutorLibro());
+            EditorialDelLibro.setText(libro.getEditorialLibro());
+            PublicacionDelLibro.setText(libro.getFechaPublicacionLibro());
+            SinopsisDelLibro.setText(libro.getSinopsisLibro());
+            ImagenDelLibro.setImageResource(libro.getImagen());
         };
     }
 

@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 
 public class LibroEjercicio3 implements Parcelable {
 
-    public static final String TAG = "Note";
+    public static final String TAG = "Libro";
 
     public String nombreLibro;
     public String autorLibro;

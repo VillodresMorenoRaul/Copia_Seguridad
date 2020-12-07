@@ -24,7 +24,7 @@ public class FragmentLista extends Fragment {
 
 
     interface FragmentListaCallback {
-        void  onNoteView(LibroEjercicio3 note);
+        void  onNoteView(LibroEjercicio3 libro);
     }
 
     @Override
@@ -66,8 +66,8 @@ public class FragmentLista extends Fragment {
 
         listener = new ListAdapterEjercicio3.OnItemClickListener() {
             @Override
-            public void onItemClick(LibroEjercicio3 note) {
-                callback.onNoteView(note);
+            public void onItemClick(LibroEjercicio3 libro) {
+                callback.onNoteView(libro);
             }
         };
         adapternote = new ListAdapterEjercicio3(listaLibros, listener);
