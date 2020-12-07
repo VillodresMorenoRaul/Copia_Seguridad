@@ -18,7 +18,7 @@ public class FragmentLista extends Fragment {
 
     public static final String TAG ="FragmentLista" ;
     private RecyclerView rvlibros;
-    private RecyclerView.Adapter adapternote;
+    private RecyclerView.Adapter adapterlibro;
     private ListAdapterEjercicio3.OnItemClickListener listener;
     private FragmentListaCallback callback;
 
@@ -70,8 +70,8 @@ public class FragmentLista extends Fragment {
                 callback.onNoteView(libro);
             }
         };
-        adapternote = new ListAdapterEjercicio3(listaLibros, listener);
-        rvlibros.setAdapter(adapternote);
+        adapterlibro = new ListAdapterEjercicio3(listaLibros, listener);
+        rvlibros.setAdapter(adapterlibro);
     }
 
 }
