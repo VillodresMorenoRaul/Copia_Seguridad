@@ -29,14 +29,9 @@ public class MainActivity3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Ojo: este código es generado automáticamente, pone la vista y ya, pero
-        // no tiene nada que ver con el código que vamos a escribir
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        // Lo siguiente sí es nuestro ;)
-        // Definir nuestro controlador
+        
         enlaceController = new EnlaceController(MainActivity3.this);
 
         // Instanciar vistas
