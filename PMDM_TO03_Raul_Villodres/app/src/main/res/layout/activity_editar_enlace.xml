@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity3.EditarEnlaceActivity">
+
+    <EditText
+        android:id="@+id/campoLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="148dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Link: "
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="165dp" />
+
+    <EditText
+        android:id="@+id/campoEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="211dp" />
+
+    <EditText
+        android:id="@+id/campoNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="89dp" />
+
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre: "
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="98dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email:"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="228dp" />
+
+    <ImageView
+        android:id="@+id/imagenAñadir"
+        android:layout_width="153dp"
+        android:layout_height="172dp"
+        tools:layout_editor_absoluteX="210dp"
+        tools:layout_editor_absoluteY="355dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <RadioGroup
+        android:layout_width="115dp"
+        android:layout_height="129dp"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="354dp">
+
+        <RadioButton
+            android:id="@+id/RatioButtonDeporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deporte" />
+
+        <RadioButton
+            android:id="@+id/RatioButtonMusica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Música" />
+
+        <RadioButton
+            android:id="@+id/RatioButtonTecnologia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tecnología" />
+
+        <RadioButton
+            android:id="@+id/RatioButtonNoticias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Noticias" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/categoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categoría"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+    <TextView
+        android:id="@+id/imagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Imagen"
+        tools:layout_editor_absoluteX="216dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+    <Button
+        android:id="@+id/Guardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar datos"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="562dp" />
+
+    <TextView
+        android:id="@+id/Añadir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EDICIÓN DE UN CAMPO"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="25dp" />
+
+    <Button
+        android:id="@+id/Cancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CANCELAR"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="624dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

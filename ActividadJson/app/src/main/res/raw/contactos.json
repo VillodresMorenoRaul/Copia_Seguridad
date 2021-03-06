@@ -1,0 +1,34 @@
+{
+    "contactos": [
+                  {
+                    "nombre" : "Penélope Cruz",
+                    "direccion" : "calle los remedios, 29007, Málaga",
+                    "email" : "penelope@gmail.com",
+                    "telefono" : {
+                                    "casa" : "952435123" ,
+                                    "movil" : "622435123" ,
+                                    "trabajo" : "951435123"
+                                 }
+                  },
+                  {
+                    "nombre" : "Blanca Suárez",
+                    "direccion" : "calle hilera, 29007, Málaga",
+                    "email" : "blanca@gmail.com",
+                    "telefono" : {
+                                    "casa" : "952435123" ,
+                                    "movil" : "622434060" ,
+                                    "trabajo" : "951435123"
+                                 }
+                  },
+      {
+        "nombre" : "Adriana Ugarte",
+        "direccion" : "calle cómpeta, 29007, Málaga",
+        "email" : "penelope@gmail.com",
+        "telefono" : {
+          "casa" : "952435123" ,
+          "movil" : "622437419" ,
+          "trabajo" : "951435123"
+        }
+      }
+    ]
+}

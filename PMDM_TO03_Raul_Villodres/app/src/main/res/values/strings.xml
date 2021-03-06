@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">PMDM_TO03_Raul_Villodres</string>
+    <string name="cero">cero</string>
+    <string name="menos">menos</string>
+    <string name="cinco">cinco</string>
+    <string name="mas">mas</string>
+    <string name="guardar">Guardar Alarmas</string>
+    <string name="cafes">cafes</string>
 </resources>

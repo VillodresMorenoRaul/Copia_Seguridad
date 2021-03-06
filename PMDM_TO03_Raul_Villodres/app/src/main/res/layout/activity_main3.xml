@@ -4,6 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity3">
+    tools:context="Activity3.MainActivity3">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerEnlaces"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="218dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatButtonAgregarEnlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@drawable/ic_add_white_24dp"
+        tools:layout_editor_absoluteX="303dp"
+        tools:layout_editor_absoluteY="642dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

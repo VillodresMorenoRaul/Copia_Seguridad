@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/colorFondo"
+        android:title="Color de fondo" />
+    <item
+        android:id="@+id/cambio"
+        android:title="Cambio" />
+    <item
+        android:id="@+id/acercaDe"
+        android:title="Acerca de" />
+</menu>
