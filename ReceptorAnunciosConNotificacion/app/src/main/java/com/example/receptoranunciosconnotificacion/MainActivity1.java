@@ -2,7 +2,6 @@ package com.example.receptoranunciosconnotificacion;
 
 import android.app.AlarmManager ;
 import android.app.Notification ;
-import android.app.NotificationManager ;
 import android.app.PendingIntent ;
 import android.content.Context ;
 import android.content.Intent ;
@@ -14,13 +13,15 @@ import android.view.MenuItem ;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity1 extends AppCompatActivity {
     public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
     private final static String default_notification_channel_id = "default" ;
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super .onCreate(savedInstanceState) ;
-        setContentView(R.layout. activity_main ) ;
+        setContentView(R.layout.activity_main1) ;
+        scheduleNotification(getNotification( "Aplicación abierta" ) , 0 ) ;
+
     }
     @Override
     public boolean onCreateOptionsMenu (Menu menu) {
@@ -31,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
         switch (item.getItemId()) {
-            case R.id. action_5 :
+            case R.id. action_5:
                 scheduleNotification(getNotification( "Notificación con 5 segundos de retardo" ) , 5000 ) ;
                 return true;
-            case R.id. action_10 :
-                scheduleNotification(getNotification( "Notificación con 10 segundos de retardo" ) , 10000 ) ;
+            case R.id. action_10:
+                scheduleNotification(getNotification( "Notificación sin retardo" ) , 0 ) ;
                 return true;
-            case R.id. action_30 :
+            case R.id. action_30:
                 scheduleNotification(getNotification( "Notificación con 30 segundos de retardo" ) , 30000 ) ;
                 return true;
             default :

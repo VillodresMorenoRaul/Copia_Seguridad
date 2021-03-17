@@ -1,11 +1,11 @@
-package com.example.receptoranunciosconnotificacion;
+package com.example.hlc_to04_raul_villodres;
 
-import android.app.Notification ;
-import android.app.NotificationChannel ;
-import android.app.NotificationManager ;
-import android.content.BroadcastReceiver ;
-import android.content.Context ;
-import android.content.Intent ;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 
 public class MyNotificationPublisher extends BroadcastReceiver {
     public static String NOTIFICATION_ID = "notification-id" ;
