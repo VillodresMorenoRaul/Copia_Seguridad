@@ -40,12 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
     //Método AbrirActividad1(), que abrirá la clase asignada al ejercicio 1
     public void AbrirActividad1() {
-        Intent intent = new Intent(this, MainActivity1.class);
+        Intent intent = new Intent(this, MainActivity11.class);
         startActivity(intent);
     }
 
     public void AbrirActividad2() {
-        Intent intent = new Intent(this, MainActivity2.class);
+        Intent intent = new Intent(this, MainActivity1.class);
         startActivity(intent);
     }
 }

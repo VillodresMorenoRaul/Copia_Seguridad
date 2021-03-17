@@ -8,17 +8,19 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerEnlaces"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="351dp" />
+        android:layout_width="420dp"
+        android:layout_height="750dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatButtonAgregarEnlace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="33dp"
         android:clickable="true"
-        app:srcCompat="@drawable/ic_add_white_24dp"
-        tools:layout_editor_absoluteX="303dp"
-        tools:layout_editor_absoluteY="642dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add_white_24dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

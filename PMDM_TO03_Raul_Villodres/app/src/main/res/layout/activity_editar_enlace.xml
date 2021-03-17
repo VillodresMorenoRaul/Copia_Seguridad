@@ -10,66 +10,82 @@
         android:id="@+id/campoLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="48dp"
         android:ems="10"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="148dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/campoNombre" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="47dp"
         android:text="Link: "
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="165dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre" />
 
     <EditText
         android:id="@+id/campoEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="50dp"
         android:ems="10"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="211dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/campoLink" />
 
     <EditText
         android:id="@+id/campoNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="50dp"
         android:ems="10"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="89dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Añadir" />
 
     <TextView
         android:id="@+id/nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="41dp"
         android:text="Nombre: "
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="98dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Añadir" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="44dp"
         android:text="Email:"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="228dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ImageView
-        android:id="@+id/imagenAñadir"
+        android:id="@+id/imagenAnadir"
         android:layout_width="153dp"
         android:layout_height="172dp"
-        tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="355dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagen"
         tools:srcCompat="@tools:sample/avatars" />
 
     <RadioGroup
         android:layout_width="115dp"
         android:layout_height="129dp"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="354dp">
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="9dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoria">
 
         <RadioButton
             android:id="@+id/RatioButtonDeporte"
@@ -100,40 +116,51 @@
         android:id="@+id/categoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="78dp"
         android:text="Categoría"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="326dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/imagen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="148dp"
         android:text="Imagen"
-        tools:layout_editor_absoluteX="216dp"
-        tools:layout_editor_absoluteY="326dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/campoEmail" />
 
     <Button
         android:id="@+id/Guardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="138dp"
         android:text="Guardar datos"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="562dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenAnadir" />
 
     <TextView
         android:id="@+id/Añadir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="25dp"
         android:text="EDICIÓN DE UN CAMPO"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="25dp" />
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Cancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="59dp"
         android:text="CANCELAR"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="624dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

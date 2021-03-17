@@ -5,14 +5,25 @@ public class Enlaces {
     private String link;
     private String email;
     private String categoria;
+    private int imagen;
     private long id;
 
-    //Constructor estándar
+    //Constructor con imagen
+    public Enlaces(String nombre, String link, String email, String categoria, int imagen) {
+        this.nombre = nombre;
+        this.link = link;
+        this.email = email;
+        this.categoria = categoria;
+        this.imagen = imagen;
+    }
+
+    //Constructor sin imagen
     public Enlaces(String nombre, String link, String email, String categoria) {
         this.nombre = nombre;
         this.link = link;
         this.email = email;
         this.categoria = categoria;
+        this.imagen = imagen;
     }
 
     //Constructor para base de datos
@@ -41,6 +52,10 @@ public class Enlaces {
         return categoria;
     }
 
+    public int getImagen() {
+        return imagen;
+    }
+
     public long getId() {
         return id;
     }
@@ -60,6 +75,10 @@ public class Enlaces {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+    public void setImagen(int imagen) {
+        this.imagen = imagen;
     }
 
     public void setId(long id) {

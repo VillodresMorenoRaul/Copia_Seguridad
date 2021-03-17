@@ -50,22 +50,22 @@ public class AgregarEnlace extends AppCompatActivity {
                     //String añadimos dependiendo del radio button una categoría e imagen.
                     if (binding.RatioButtonDeporte.isChecked()) {
                         categoria = "deportes";
-                        //binding.imagenAñadir.setImageResource(R.drawable.logodeporte);
+                        binding.imagenAnadir.setImageResource(R.drawable.logodeporte);
                     }
 
                     if (binding.RatioButtonMusica.isChecked()) {
                         categoria = "musicas";
-                        //binding.imagenAñadir.setImageResource(R.drawable.logomusica);
+                        binding.imagenAnadir.setImageResource(R.drawable.logomusica);
                     }
 
                     if (binding.RatioButtonNoticias.isChecked()) {
                         categoria = "noticias";
-                        //binding.imagenAñadir.setImageResource(R.drawable.logonoticia);
+                        binding.imagenAnadir.setImageResource(R.drawable.logonoticia);
                     }
 
                     if (binding.RatioButtonTecnologia.isChecked()) {
                         categoria = "tecnologia";
-                        //binding.imagenAñadir.setImageResource(R.drawable.logotecnologia);
+                        binding.imagenAnadir.setImageResource(R.drawable.logotecnologia);
                     }
 
                     Enlaces nuevoEnlace = new Enlaces(nombre, email, link, categoria);
@@ -90,28 +90,28 @@ public class AgregarEnlace extends AppCompatActivity {
         binding.RatioButtonDeporte.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                //binding.imagenAñadir.setImageResource(R.drawable.logodeporte);
+                binding.imagenAnadir.setImageResource(R.drawable.logodeporte);
             }
         });
 
         binding.RatioButtonMusica.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                //binding.imagenAñadir.setImageResource(R.drawable.logomusica);
+                binding.imagenAnadir.setImageResource(R.drawable.logomusica);
             }
         });
 
         binding.RatioButtonNoticias.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                //binding.imagenAñadir.setImageResource(R.drawable.logonoticia);
+                binding.imagenAnadir.setImageResource(R.drawable.logonoticia);
             }
         });
 
         binding.RatioButtonTecnologia.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                //binding.imagenAñadir.setImageResource(R.drawable.logotecnologia);
+                binding.imagenAnadir.setImageResource(R.drawable.logotecnologia);
             }
         });
 

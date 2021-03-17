@@ -70,7 +70,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ImageView
-        android:id="@+id/imagenAñadir"
+        android:id="@+id/imagenAnadir"
         android:layout_width="153dp"
         android:layout_height="172dp"
         android:layout_marginTop="10dp"
@@ -84,7 +84,7 @@
         android:layout_height="129dp"
         android:layout_marginTop="9dp"
         android:layout_marginEnd="63dp"
-        app:layout_constraintEnd_toStartOf="@+id/imagenAñadir"
+        app:layout_constraintEnd_toStartOf="@+id/imagenAnadir"
         app:layout_constraintTop_toBottomOf="@+id/categoria">
 
         <RadioButton
@@ -141,7 +141,7 @@
         android:layout_marginEnd="138dp"
         android:text="Guardar datos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagenAñadir" />
+        app:layout_constraintTop_toBottomOf="@+id/imagenAnadir" />
 
     <TextView
         android:id="@+id/Añadir"

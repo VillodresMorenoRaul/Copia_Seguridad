@@ -6,57 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity1">
 
-    <Button
-        android:id="@+id/Descargar"
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="144dp"
-        android:text="Descargar"
+        android:layout_marginTop="77dp"
+        android:layout_marginEnd="176dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CampoUrl" />
+        app:layout_constraintTop_toBottomOf="@+id/campoResultado">
+
+        <RadioButton
+            android:id="@+id/EurosADolares"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Euros a dólares" />
+
+        <RadioButton
+            android:id="@+id/DolaresAEuros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Dólares a euros" />
+    </RadioGroup>
 
     <EditText
-        android:id="@+id/CampoUrl"
-        android:layout_width="379dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="http://clipartsign.com/upload/2016/01/11/pineapple-images-free-pictures-download-3.png"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Titulo" />
-
-    <TextView
-        android:id="@+id/Titulo"
+        android:id="@+id/campoResultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tipo de archivo"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="47dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/campoValor" />
+
+    <TextView
+        android:id="@+id/Resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="32dp"
+        android:text="Resultado"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <WebView
-        android:id="@+id/WebView"
-        android:layout_width="386dp"
-        android:layout_height="294dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Descargar">
+        app:layout_constraintTop_toBottomOf="@+id/valor" />
 
-    </WebView>
+    <TextView
+        android:id="@+id/valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="123dp"
+        android:layout_marginEnd="32dp"
+        android:text="Valor inicial"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imagen"
-        android:layout_width="295dp"
-        android:layout_height="231dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="6dp"
-        android:layout_x="388dp"
-        android:layout_y="374dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <EditText
+        android:id="@+id/campoValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="118dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.example.pmdm_to03_raul_villodres.Activity3;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,6 +43,8 @@ public class AdaptadorEnlaces extends RecyclerView.Adapter<AdaptadorEnlaces.MyVi
         myViewHolder.link.setText(linkEnlace);
         myViewHolder.email.setText(emailEnlace);
         myViewHolder.categoria.setText(categoriaEnlace);
+        myViewHolder.imagen.setImageResource(listaDeEnlaces.get(i).getImagen());
+
     }
 
     @Override
@@ -51,6 +54,7 @@ public class AdaptadorEnlaces extends RecyclerView.Adapter<AdaptadorEnlaces.MyVi
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView nombre, link, email, categoria;
+        ImageView imagen;
 
         MyViewHolder(View itemView){
             super(itemView);
@@ -58,6 +62,7 @@ public class AdaptadorEnlaces extends RecyclerView.Adapter<AdaptadorEnlaces.MyVi
                 this.link = itemView.findViewById(R.id.tvLink);
                 this.email = itemView.findViewById(R.id.tvEmail);
                 this.categoria = itemView.findViewById(R.id.tvCategoria);
+                this.imagen = itemView.findViewById(R.id.tvImagen);
             }
         }
     }

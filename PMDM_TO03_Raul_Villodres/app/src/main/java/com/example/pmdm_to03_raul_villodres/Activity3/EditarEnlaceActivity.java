@@ -58,12 +58,12 @@ public class EditarEnlaceActivity extends AppCompatActivity {
 
 
         // Rellenar los EditText con los datos de los enlaces
-        etEditarNombre.setText(enlace.getNombre());
-        etEditarLink.setText(enlace.getLink());
-        etEditarEmail.setText(enlace.getLink());
+        binding.campoNombre.setText(enlace.getNombre());
+        binding.campoLink.setText(enlace.getLink());
+        binding.campoEmail.setText(enlace.getEmail());
 
         // Listener del click del botón para salir, simplemente cierra la actividad
-        btnCancelarEdicion.setOnClickListener(new View.OnClickListener() {
+            binding.Cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -71,56 +71,61 @@ public class EditarEnlaceActivity extends AppCompatActivity {
         });
 
         // Listener del click del botón que guarda cambios
-        btnGuardarCambios.setOnClickListener(new View.OnClickListener() {
+            binding.Guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Remover previos errores si existen
-                etEditarNombre.setError(null);
-                etEditarLink.setError(null);
-                etEditarEmail.setError(null);
+                binding.campoNombre.setError(null);
+                binding.campoLink.setError(null);
+                binding.campoEmail.setError(null);
 
                 // Creamos el enlace con los nuevos datos
                 // Primero obtenemos el id de la anterior
-                String nuevoNombre = etEditarNombre.getText().toString();
-                String nuevoLink = etEditarLink.getText().toString();
-                String nuevoEmail = etEditarEmail.getText().toString();
+                String nuevoNombre = binding.campoNombre.getText().toString();
+                String nuevoLink = binding.campoLink.getText().toString();
+                String nuevoEmail = binding.campoEmail.getText().toString();
                 String nuevaCategoria = "deportes";
 
                 if (binding.RatioButtonDeporte.isChecked()) {
                     nuevaCategoria = "deportes";
-                    //binding.imagenAñadir.setImageResource(R.drawable.logodeporte);
+                    binding.imagenAnadir.setImageResource(R.drawable.logodeporte);
                 }
 
                 if (binding.RatioButtonMusica.isChecked()) {
                     nuevaCategoria = "musicas";
-                    //binding.imagenAñadir.setImageResource(R.drawable.logomusica);
+                    binding.imagenAnadir.setImageResource(R.drawable.logomusica);
                 }
 
                 if (binding.RatioButtonNoticias.isChecked()) {
                     nuevaCategoria = "noticias";
-                    //binding.imagenAñadir.setImageResource(R.drawable.logonoticia);
+                    binding.imagenAnadir.setImageResource(R.drawable.logonoticia);
                 }
 
                 if (binding.RatioButtonTecnologia.isChecked()) {
                     nuevaCategoria = "tecnologia";
-                    //binding.imagenAñadir.setImageResource(R.drawable.logotecnologia);
+                    binding.imagenAnadir.setImageResource(R.drawable.logotecnologia);
                 }
 
                 if (nuevoNombre.isEmpty()) {
-                    etEditarNombre.setError("Escribe el nombre");
-                    etEditarNombre.requestFocus();
-                    return;
-                }
-                if (nuevoEmail.isEmpty()) {
-                    etEditarEmail.setError("Escribe la edad");
-                    etEditarEmail.requestFocus();
+                    binding.campoNombre.setError("Escribe el nombre");
+                    binding.campoNombre.requestFocus();
                     return;
                 }
 
-                if(nuevoLink.isEmpty()){
-                    etEditarLink.setError("Escribe el link");
-                    etEditarLink.requestFocus();
+                if (nuevoLink.isEmpty()) {
+                    binding.campoLink.setError("Escribe el Link");
+                    binding.campoLink.requestFocus();
+                    return;
                 }
+
+
+                if (nuevoEmail.isEmpty()) {
+                    binding.campoEmail.setError("Escribe el Email");
+                    binding.campoEmail.requestFocus();
+                    return;
+                }
+
+
 
                 // Si llegamos hasta aquí es porque los datos ya están validados
                 Enlaces EnlaceConNuevosCambios = new Enlaces(nuevoNombre, nuevoLink, nuevoEmail, nuevaCategoria, enlace.getId());

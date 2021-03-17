@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -30,7 +31,7 @@ public class MainActivity3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main3);
         
         enlaceController = new EnlaceController(MainActivity3.this);
 
@@ -60,7 +61,7 @@ public class MainActivity3 extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity3.this, EditarEnlaceActivity.class);
                 intent.putExtra("id", enlaceSeleccionado.getId());
                 intent.putExtra("nombre", enlaceSeleccionado.getNombre());
-                intent.putExtra("edad", enlaceSeleccionado.getLink());
+                intent.putExtra("link", enlaceSeleccionado.getLink());
                 intent.putExtra("email", enlaceSeleccionado.getEmail());
                 intent.putExtra("categoria", enlaceSeleccionado.getEmail());
                 startActivity(intent);
