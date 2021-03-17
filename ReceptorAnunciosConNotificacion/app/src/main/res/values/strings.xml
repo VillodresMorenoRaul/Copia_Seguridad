@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ReceptorAnunciosConNotificacion</string>
+    <string name="Descripcion">Selecciona una opción del menú que hay arriba para elegir el retardo con el que se mostrará la notificación.</string>
+    <string name="Titulo">APLICACIÓN DE NOTIFICACIONES</string>
 </resources>

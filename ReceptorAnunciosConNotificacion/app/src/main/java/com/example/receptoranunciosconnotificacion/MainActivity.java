@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected (MenuItem item) {
         switch (item.getItemId()) {
             case R.id. action_5 :
-                scheduleNotification(getNotification( "5 second delay" ) , 5000 ) ;
+                scheduleNotification(getNotification( "Notificación con 5 segundos de retardo" ) , 5000 ) ;
                 return true;
             case R.id. action_10 :
-                scheduleNotification(getNotification( "10 second delay" ) , 10000 ) ;
+                scheduleNotification(getNotification( "Notificación con 10 segundos de retardo" ) , 10000 ) ;
                 return true;
             case R.id. action_30 :
-                scheduleNotification(getNotification( "30 second delay" ) , 30000 ) ;
+                scheduleNotification(getNotification( "Notificación con 30 segundos de retardo" ) , 30000 ) ;
                 return true;
             default :
                 return super .onOptionsItemSelected(item) ;
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private Notification getNotification (String content) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder( this, default_notification_channel_id ) ;
-        builder.setContentTitle( "Scheduled Notification" ) ;
+        builder.setContentTitle( "Notificación personalizada" ) ;
         builder.setContentText(content) ;
         builder.setSmallIcon(R.drawable. ic_launcher_foreground ) ;
         builder.setAutoCancel( true ) ;

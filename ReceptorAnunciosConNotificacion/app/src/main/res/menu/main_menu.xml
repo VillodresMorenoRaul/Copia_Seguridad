@@ -4,13 +4,13 @@
     <item
         android:id = "@+id/action_5"
         app:showAsAction = "never"
-        android:title = "5 seconds" />
+        android:title = "5 segundos de espera" />
     <item
         android:id = "@+id/action_10"
         app:showAsAction = "never"
-        android:title = "10 seconds" />
+        android:title = "10 segundos de espera" />
     <item
         android:id = "@+id/action_30"
         app:showAsAction = "never"
-        android:title = "30 seconds" />
+        android:title = "30 segundos de espera" />
 </menu>
