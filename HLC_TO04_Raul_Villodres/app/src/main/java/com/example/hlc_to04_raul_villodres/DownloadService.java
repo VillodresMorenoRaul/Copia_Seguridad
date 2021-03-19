@@ -1,17 +1,19 @@
 package com.example.hlc_to04_raul_villodres;
 
+import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
-import android.os.Environment;
 import android.os.IBinder;
+import android.os.SystemClock;
 import android.util.Log;
 import android.widget.Toast;
 
-import org.jetbrains.annotations.NotNull;
+import androidx.core.app.NotificationCompat;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
+import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -24,23 +26,27 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 public class DownloadService extends Service {
-
+    public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
+    public static String default_notification_channel_id = "default" ;
     public static double VALORES;
+
     public DownloadService() {
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        mostrarMensaje("Creando el servicio . . .");
     }
 
+    //Nuestro onStartCommand se encargará de obtener la URL de nuestro mainActivity y realizar una acción del okhttp, además de mostrar una notificación
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         URL url = null;
+
         try {
             url = new URL(MainActivity1.URL);
             descargaOkHTTP(url);
+            scheduleNotification(getNotification( "El ratio ha sido descargado" )) ;
         } catch (MalformedURLException e) {
             e.printStackTrace();
             mostrarMensaje("Error en la URL: " + MainActivity1.URL);
@@ -62,18 +68,19 @@ public class DownloadService extends Service {
     }
 
     private void descargaOkHTTP(URL web) {
-        final OkHttpClient client = new OkHttpClient();
 
-        Request request = new Request.Builder()
-                .url(web)
-                .build();
+        final OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder().url(web).build();
 
         client.newCall(request).enqueue(new Callback() {
+
+            //En caso de fallo muestra un error
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
                 Log.e("Error: ", e.getMessage());
             }
 
+            //Nuestro OnResponse se encarga de asignar el valor obtenido de la página web que hemos especificado
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                 try (ResponseBody responseBody = response.body()) {
@@ -84,47 +91,39 @@ public class DownloadService extends Service {
                         // Read data on the worker thread
                         final String responseData = response.body().string();
                         // guardar el fichero descargado en memoria externa
-                        if (escribirExterna(responseData)) {
                             Log.i("Descarga: ", "fichero descargado");
-                            VALORES = Double.parseDouble(responseData);
-                            System.out.println(VALORES);
-                        } else
-                            Log.e("Error ", "no se ha podido descargar");
+                            MainActivity1.Ratio = Double.parseDouble(responseData);
                     }
                 }
             }
         });
     }
 
+    //Atajo para mostrar toasts
     private void mostrarMensaje(String mensaje) {
         Toast.makeText(this,mensaje, Toast.LENGTH_SHORT).show();
     }
 
-    private boolean escribirExterna(String cadena) {
-        File miFichero, tarjeta;
-        BufferedWriter bw = null;
-        boolean correcto = false;
+    //Este método realiza los ajustes pertinentes en la notificación
+    private void scheduleNotification (Notification notification) {
+        Intent notificationIntent = new Intent( this, MyNotificationPublisher. class ) ;
+        notificationIntent.putExtra(MyNotificationPublisher. NOTIFICATION_ID , 1 ) ;
+        notificationIntent.putExtra(MyNotificationPublisher. NOTIFICATION , notification) ;
+        PendingIntent pendingIntent = PendingIntent. getBroadcast ( this, 0 , notificationIntent , PendingIntent. FLAG_UPDATE_CURRENT ) ;
+        long futureInMillis = SystemClock. elapsedRealtime ();
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context. ALARM_SERVICE ) ;
+        assert alarmManager != null;
+        alarmManager.set(AlarmManager. ELAPSED_REALTIME_WAKEUP , futureInMillis , pendingIntent) ;
+    }
 
-        try {
-            tarjeta = Environment.getExternalStorageDirectory();
-            miFichero = new File(tarjeta.getAbsolutePath(), "frases.html");
-            bw = new BufferedWriter(new FileWriter(miFichero));
-            bw.write(cadena);
-            Log.i("Información: ", miFichero.getAbsolutePath());
-        } catch (IOException e) {
-            if (cadena != null)
-                Log.e("Error: ", cadena);
-            Log.e("Error de E/S", e.getMessage());
-        } finally {
-            try {
-                if (bw != null) {
-                    bw.close();
-                    correcto = true;
-                }
-            } catch (IOException e) {
-                Log.e("Error al cerrar", e.getMessage());
-            }
-        }
-        return correcto;
+    //Y este otro la muestra.
+    private Notification getNotification (String content) {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder( this, default_notification_channel_id ) ;
+        builder.setContentTitle( "Notificación personalizada" ) ;
+        builder.setContentText(content) ;
+        builder.setSmallIcon(R.drawable. ic_launcher_foreground ) ;
+        builder.setAutoCancel( true ) ;
+        builder.setChannelId( NOTIFICATION_CHANNEL_ID ) ;
+        return builder.build() ;
     }
 }

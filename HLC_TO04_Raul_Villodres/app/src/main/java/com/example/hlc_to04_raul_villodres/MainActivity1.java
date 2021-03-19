@@ -2,6 +2,7 @@ package com.example.hlc_to04_raul_villodres;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -10,20 +11,18 @@ import android.widget.Toast;
 
 import com.example.hlc_to04_raul_villodres.databinding.ActivityMain1Binding;
 
-import java.io.IOException;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity1 extends AppCompatActivity {
 
+    //Variables
     private ActivityMain1Binding binding;
     private TextWatcher text = null;
     public static final String URL = "https://dam.org.es/ficheros/rate.txt";
-    public Double Ratio;
+    public static Double Ratio;
+    public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
+    public static final int MINUTOS = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +35,20 @@ public class MainActivity1 extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        //Creamos una timer task, que repetira nuestro servicio cada x tiempo (El indicado en el timer.schedule)
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask(){
+            public void run(){
+                //Llamamos al servicio
+                startService(new Intent(MainActivity1.this, DownloadService.class));
+            }
+        };
+
+        //Aquí multiplicamos por 1000 y por 60 para convertir a milisegundos la cantidad que deseemos
+        timer.schedule(task, 0, 1000 * 60 * MINUTOS);
+
         //Desactivamos la posibilidad de escribir en el campoResultado
         binding.campoResultado.setEnabled(false);
-
-
-        OkHttpClient client = new OkHttpClient();
 
         //Si se hace click en el botón EurosADolares
         binding.EurosADolares.setOnClickListener(new View.OnClickListener() {
@@ -68,36 +76,11 @@ public class MainActivity1 extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-
                 if(binding.campoValor.getText().toString().equals("")) {
                     binding.campoResultado.setText("");
                 } else {
 
                     Double cantidad = Double.parseDouble(binding.campoValor.getText().toString());
-                    Request request = new Request.Builder().url(URL).build();
-
-
-                    client.newCall(request).enqueue(new Callback() {
-                        @Override
-                        public void onFailure(Call call, IOException e) {
-
-                            binding.campoResultado.setText("0");
-                            binding.campoResultado.setText("0");
-
-                            Toast.makeText(getApplicationContext(), "Ha habido un error", Toast.LENGTH_LONG);
-
-                        }
-
-                        @Override
-                        public void onResponse(Call call, Response response) throws IOException {
-                            if(response.isSuccessful()) {
-
-                                try {
-                                    Ratio = Double.valueOf(response.body().string());
-                                } catch (Exception e){
-                                    Ratio = 0.0;
-                                }
-
 
                                 MainActivity1.this.runOnUiThread(new Runnable() {
 
@@ -113,16 +96,13 @@ public class MainActivity1 extends AppCompatActivity {
                                             binding.campoResultado.setText(String.valueOf(cantidad / Ratio));
 
                                         } else {
-                                            binding.campoResultado.setText("0");
-                                            binding.campoValor.setText("0");
+                                            binding.campoResultado.setText("");
+                                            binding.campoValor.setText("");
                                         }
                                     }
                                 });
                             }
                         }
-                    });
-                }
-            }
 
 
             @Override
@@ -145,4 +125,9 @@ public class MainActivity1 extends AppCompatActivity {
         binding.campoValor.setText("");
         binding.campoResultado.setText("");
     }
+
+    private void mostrarMensaje(String mensaje) {
+        Toast.makeText(this,mensaje, Toast.LENGTH_SHORT).show();
+    }
+
 }
