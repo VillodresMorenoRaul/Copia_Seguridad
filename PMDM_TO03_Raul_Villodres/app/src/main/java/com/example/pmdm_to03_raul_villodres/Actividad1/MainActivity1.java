@@ -166,12 +166,8 @@ public class MainActivity1 extends AppCompatActivity { //Ahora no se extiende a 
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         switch(item.getItemId()){
 
-            case R.id.colorFondo:
-                AbrirSelectorDeColor();
-                break;
-
-            case R.id.cambio:
-                AbrirCambio();
+            case R.id.settings:
+                AbrirSettings();
                 break;
 
             case R.id.acercaDe:
@@ -181,13 +177,8 @@ public class MainActivity1 extends AppCompatActivity { //Ahora no se extiende a 
         return super.onOptionsItemSelected(item);
     }
 
-    public void AbrirSelectorDeColor(){
-        Intent intent = new Intent(this, elegirColor.class);
-        startActivity(intent);
-    }
-
-    public void AbrirCambio(){
-        Intent intent = new Intent(this, cambiarValor.class);
+    public void AbrirSettings(){
+        Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
 

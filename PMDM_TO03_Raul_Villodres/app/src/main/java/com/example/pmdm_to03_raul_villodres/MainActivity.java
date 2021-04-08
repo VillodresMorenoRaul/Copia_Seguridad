@@ -9,7 +9,6 @@ import android.view.View;
 import com.example.pmdm_to03_raul_villodres.Actividad1.MainActivity1;
 import com.example.pmdm_to03_raul_villodres.Actividad2.MainActivity2;
 import com.example.pmdm_to03_raul_villodres.Activity3.MainActivity3;
-import com.example.pmdm_to03_raul_villodres.Activity4.MainActivity4;
 import com.example.pmdm_to03_raul_villodres.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,13 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 AbrirActividad3();
             }
         });
-
-        binding.AccederEjercicio4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AbrirActividad4();
-            }
-        });
     }
 
 
@@ -68,11 +60,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void AbrirActividad3() {
         Intent intent = new Intent(this, MainActivity3.class);
-        startActivity(intent);
-    }
-
-    public void AbrirActividad4() {
-        Intent intent = new Intent(this, MainActivity4.class);
         startActivity(intent);
     }
 

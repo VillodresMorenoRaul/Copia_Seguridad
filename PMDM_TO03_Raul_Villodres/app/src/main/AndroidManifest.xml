@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
-        <activity android:name=".Activity3.AgregarEnlace"></activity>
+        <activity
+            android:name=".Actividad1.SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
+        <activity android:name=".Activity3.AgregarEnlace" />
         <activity android:name=".Activity3.EditarEnlaceActivity" />
         <activity android:name=".Actividad1.cambiarValor" />
         <activity android:name=".Actividad1.elegirColor" />
-        <activity android:name=".Activity4.MainActivity4" />
         <activity android:name=".Activity3.MainActivity3" />
         <activity android:name=".Actividad2.MainActivity2" />
         <activity android:name=".Actividad1.MainActivity1" />
