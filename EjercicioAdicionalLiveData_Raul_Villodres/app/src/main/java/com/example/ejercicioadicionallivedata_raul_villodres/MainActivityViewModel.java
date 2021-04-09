@@ -13,18 +13,21 @@ public class MainActivityViewModel extends ViewModel {
     private MutableLiveData<Boolean> termina = new MutableLiveData<Boolean>();
 
     public void StartTimer(){
+        //Ponemos el boolean termina en falso para que el programa pueda continuar
         termina.setValue(false);
+        //Instanciamos un nuevo contador con el valor que le otorguemos
         contador = new CountDownTimer(valorContador.getValue(), 1000) {
+
+            //Mostramos el valor
             @Override
             public void onTick(long l) {
                 long tiempoRestante = l/1000;
-                segundos.setValue((int) tiempoRestante);
-                //segundos.setValue(Integer.parseInt(String.valueOf(tiempoRestante)));
+                segundos.setValue(Integer.parseInt(String.valueOf(tiempoRestante)));
             }
 
+            //Pongo la variable termina en true cuando acabe
             @Override
             public void onFinish() {
-                //Pongo la variable termina en true cuando acabe
                 termina.setValue(true);
             }
         };
@@ -38,35 +41,16 @@ public class MainActivityViewModel extends ViewModel {
     }
 
     //Getters
-
-    public void setTimerValue(long timerValue) {
-        this.valorContador.setValue(timerValue);
-    }
-
     public MutableLiveData<Integer> getSegundos() {
         return segundos;
     }
 
-    public MutableLiveData<Long> getValorContador() {
-        return valorContador;
-    }
-
-    public MutableLiveData<Boolean> getTermina() {
-        return termina;
-    }
 
 
     //Setters
-
-    public void setSegundos(MutableLiveData<Integer> segundos) {
-        this.segundos = segundos;
+    public void setTimerValue(long timerValue) {
+        this.valorContador.setValue(timerValue);
     }
 
-    public void setValorContador(MutableLiveData<Long> valorContador) {
-        this.valorContador = valorContador;
-    }
 
-    public void setTermina(MutableLiveData<Boolean> termina) {
-        this.termina = termina;
-    }
 }

@@ -26,9 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(view);
 
+        //Desactivamos el botón cancelar y creamos un nuevo ViewModel
         binding.BotonCancelar.setEnabled(false);
         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
+        //Obtenemos los segundos
         viewModel.getSegundos().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Al pulsar el boton iniciar se comprueba que el valor sea mayor que 1 segundo y menor que 11 y en caso positivo comienza el contador con nuestro tiempo indicado
     public void AccionIniciar(){
 
         long segundos = Long.parseLong(binding.CampoSegundos.getText().toString()) * 1000;
@@ -69,16 +72,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Volvemos el contador a 0, lo detenemos y desactivamos el boton
     public void AccionCancelar(){
-            // si se pulsó el botón parar... asigno 0 al contador
             binding.Contador.setText("0");
-            // y paro el temporizador
             viewModel.StopTimer();
             binding.BotonCancelar.setEnabled(false);
             mostrarMensaje("Contador reiniciado");
 
     }
 
+    //Método para mostrar Toasts
     public void mostrarMensaje(String texto){
         Toast.makeText(this, texto, Toast.LENGTH_LONG).show();
     }

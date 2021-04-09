@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             binding.Contador.setText("Nop");
         }
 
-        //Sumar
+        //Suma el número almacenado en nuestro ViewModel y plasma su valor siempre que sea menor a 100
         binding.Sumar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Restar
+        //Restamos siempre que el número sea positivo, mostrando también su valor
         binding.Restar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //Método para escribir un toast facilmente
     private void mostrarMensaje(String texto) {
         Toast.makeText(this, texto, Toast.LENGTH_SHORT).show();
     }
