@@ -59,8 +59,9 @@ public class MainActivity extends AppCompatActivity {
     //Al pulsar el boton iniciar se comprueba que el valor sea mayor que 1 segundo y menor que 11 y en caso positivo comienza el contador con nuestro tiempo indicado
     public void AccionIniciar(){
 
-        long segundos = Long.parseLong(binding.CampoSegundos.getText().toString()) * 1000;
-        binding.BotonCancelar.setEnabled(true);
+        try {
+            long segundos = Long.parseLong(binding.CampoSegundos.getText().toString()) * 1000;
+            binding.BotonCancelar.setEnabled(true);
 
             if(segundos > 1000 && segundos < 11000){
                 viewModel.setTimerValue(segundos);
@@ -69,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 mostrarMensaje("Número demasiado pequeño (Debe ser entre 2 y 10 segundos");
             }
+        } catch (Exception e){
+            mostrarMensaje("El campo está vacío o contiene un valor no válido");
+        }
+
 
     }
 
